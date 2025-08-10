@@ -1,24 +1,26 @@
 package models
 
-type Fuel struct {
-	Name       string
-	Price      float64
-	AmountFuel float64
-}
-
 type GasStation struct {
 	FuelTypes []Fuel
+}
+type Fuel struct {
+	Name       string
+	Price      uint
+	AmountFuel uint
 }
 
 type Car struct {
 	Model      string
 	FuelType   int
-	MaxGasTank int
-	CurrentGas int
-	Driver     Driver
+	MaxGasTank uint
+	CurrentGas uint
+}
+type Driver struct {
+	Name   string
+	Car    *Car
+	Wallet Wallet
 }
 
-type Driver struct {
-	Name          string
-	BalanceWallet float64
+type Wallet struct {
+	BalanceWallet uint
 }
